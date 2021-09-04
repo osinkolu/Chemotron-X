@@ -14,8 +14,8 @@ data.drop("timestamp",axis=1, inplace=True)
 data['sector'].replace(['Power','Industry','Ground Transport','Residential','International Aviation','Domestic Aviation'],[6,5,4,3,2,1],inplace= True)
 y = data.value
 x = data.drop('value', axis =1)
-from sklearn.linear_model import LinearRegression
-model= LinearRegression()
+from catboost import CatBoostRegressor #Categorical boosting
+model= CatBoostRegressor(n_estimators=100)
 model.fit(x,y)
 pickle.dump(model,open("model.pkl","wb"))
 model=pickle.load(open("model.pkl","rb"))
