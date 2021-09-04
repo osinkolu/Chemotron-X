@@ -10,7 +10,7 @@ from sklearn.linear_model import base
 import pickle
 import numpy as np
 app = Flask(__name__)
-model=pickle.load(open("model.pkl","rb"))
+#model=pickle.load(open("model.pkl","rb"))
 @app.route('/')
 def hello_world():
     return render_template("carbon_monitor.html")
