@@ -25,7 +25,7 @@ def check_status():
     print(int_features)
     final=[np.array(int_features)]
     prediction=model.predict(final)
-    output= prediction
-    return render_template("carbon_monitor.html",prediction_text="This Client is going to get House insurance, get the money set.\n the estimated probability is {}".format(output))
+    output= abs(prediction[0])
+    return render_template("carbon_monitor.html",prediction_text="The estimated value of carboon in MT is {}".format(output))
 if __name__ =="__main__":
     app.run()
