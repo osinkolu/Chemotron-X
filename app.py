@@ -27,6 +27,6 @@ def check_status():
     prediction=model.predict(final)
     print(prediction)
     output= abs(float(prediction[0]))
-    return render_template("carbon_monitor.html",prediction_text="The estimated value of carboon in MT is {}".format(output))
+    return render_template("carbon_monitor.html",prediction_text="The estimated value of carboon at your set time and location is {}MT".format(output))
 if __name__ =="__main__":
     app.run()
